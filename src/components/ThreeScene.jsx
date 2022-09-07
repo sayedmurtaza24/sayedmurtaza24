@@ -1,11 +1,10 @@
 import React, { Suspense, useEffect, useRef } from 'react'
-import { OrbitControls, Stage, useAnimations, useGLTF, ContactShadows } from '@react-three/drei'
+import { Stage, useAnimations, useGLTF, ContactShadows } from '@react-three/drei'
 import { useThree } from '@react-three/fiber';
 
 const environment = "city", preset = "rembrandt", intensity = 0.9;
 
 export default function ThreeScene() {
-  const ref = useRef()
   const group = useRef()
   const { scene, animations } = useGLTF('./developer.glb')
   const { actions } = useAnimations(animations, group)

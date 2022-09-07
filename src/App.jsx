@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import ThreeScene from './components/ThreeScene'
 import { Canvas } from '@react-three/fiber'
 import "./App.css"
-import { PerspectiveCamera } from '@react-three/drei'
 import MenuButton from './components/Menu'
 
 function App() {
