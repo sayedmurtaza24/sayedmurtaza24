@@ -3,6 +3,7 @@ import ThreeScene from './components/ThreeScene'
 import { Canvas } from '@react-three/fiber'
 import Links from './components/Links'
 import About from './components/About'
+import Projects from './components/Projects'
 import "./App.css"
 
 function App() {
@@ -16,12 +17,7 @@ function App() {
       </Canvas>
       <Links />
       <About />
-      {/* <section className='projects-section'>
-          <h2>Projects</h2>
-          <div className='abouts__projects-grid'>
-            {projects.map(project => <Project key={project.name} project={project} />)}
-          </div>
-        </section> */}
+      <Projects />
     </div>
   )
 }

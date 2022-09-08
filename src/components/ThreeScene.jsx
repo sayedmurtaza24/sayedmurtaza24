@@ -4,9 +4,9 @@ import { useThree } from '@react-three/fiber';
 
 const environment = "city", preset = "rembrandt", intensity = 0.9;
 
-export default function ThreeScene() {
+export default function ThreeScene({ modelPath }) {
   const group = useRef()
-  const { scene, animations } = useGLTF('./developer.glb')
+  const { scene, animations } = useGLTF(modelPath)
   const { actions } = useAnimations(animations, group)
   const { camera } = useThree()
 
@@ -53,3 +53,4 @@ export default function ThreeScene() {
 }
 
 useGLTF.preload('./developer.glb')
+useGLTF.preload('./developer-mobile.glb')

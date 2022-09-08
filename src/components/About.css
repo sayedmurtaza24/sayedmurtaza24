@@ -14,10 +14,11 @@
     grid-template-rows: 1fr 1.1fr;
     grid-template-columns: 1.4fr 1fr;
     column-gap: 40px;
+    max-width: 900px;
 }
 
 .about-section__title {
-    font-size: 70px;
+    font-size: 80px;
     position: relative;
     color: rgba(20, 20, 20);
     z-index: 1;
@@ -27,10 +28,11 @@
 .about-section__photo {
     grid-column: 1;
     grid-row: 2;
-    min-width: 230px;
-    height: 230px;
+    min-width: 240px;
+    height: 240px;
     object-fit: cover;
     border-radius: 50%;
+    border: 1px solid white;
 }
 
 .about-section__text {
