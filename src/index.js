@@ -6,6 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import "./fonts/product-sans-regular.ttf";
 import "./fonts/product-sans-bold.ttf";
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

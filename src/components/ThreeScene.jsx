@@ -14,7 +14,7 @@ export default function ThreeScene({ modelPath }) {
     camera.lookAt(-4, 2, 0)
     const onResize = () => {
       if (window.innerWidth < 760) {
-        camera.position.set(64, 19, -55)
+        camera.position.set(75, 39, -65)
       } else {
         camera.position.set(44, 15, -40)
       }
@@ -22,11 +22,11 @@ export default function ThreeScene({ modelPath }) {
     onResize()
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-  }, [camera]);
+  });
 
   useEffect(() => {
     setTimeout(() => { 
-      actions.typing.play()
+      actions?.typing?.play()
     }, 1000);
   }, [actions]);
 
@@ -37,7 +37,6 @@ export default function ThreeScene({ modelPath }) {
         <group ref={group}>
           <ContactShadows opacity={1} scale={120} blur={2.6} far={10} resolution={1024} frames={1} color="#000000" />
           <Stage
-            // controls={ref}
             preset={preset}
             intensity={intensity}
             contactShadow={false}
@@ -47,7 +46,6 @@ export default function ThreeScene({ modelPath }) {
           </Stage>
         </group>
       </Suspense>
-      {/* <OrbitControls ref={ref} /> */}
     </>
   )
 }

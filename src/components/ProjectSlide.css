@@ -24,8 +24,10 @@
     width: 300px;
     z-index: 3;
 }
+
 .project__description {
     line-height: 1.5;
+    white-space: pre-wrap;
 }
 
 .project__shots {
@@ -49,6 +51,7 @@
 .left-align {
     transform: translateX(-30px);
 }
+
 .right-align {
     transform: translateX(30px);
 }
@@ -61,34 +64,60 @@
     font-family: 'Bebas Neue';
 }
 
+.project__shots-clone {
+    display: none;
+}
+
 @media screen and (max-width: 760px) {
     .project {
         grid-template-columns: 1fr;
         grid-template-rows: 70px 1fr 120px;
         padding: 0 40px;
     }
+
     .project__name {
         grid-column: 1;
     }
+
     .project__details {
         grid-column: 1;
         grid-row: 2;
     }
+
     .project__shots {
         grid-column: 1;
         grid-row: 3;
         display: flex;
         gap: 10px;
         width: 100%;
-        overflow-x: scroll;
+        overflow-x: hidden;
     }
+
     .left-align {
         transform: none;
     }
+
     .right-align {
         transform: none;
     }
+
     .project__image {
-        height: 120px;
+        width: 220px;
+        position: relative;
+        animation: autoScroll 10s linear infinite;
+    }
+
+    .project__shots-clone {
+        display: flex;
+        gap: 10px;
+    }
+
+    @keyframes autoScroll {
+        0% {
+            left: 0;
+        }
+        100% {
+            left: calc((-220px * 3) + (-10px * 3))
+        }
     }
 }

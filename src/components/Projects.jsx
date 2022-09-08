@@ -11,16 +11,15 @@ import TrackMateShot3 from '../assets/trackmate-screenshot-2.png'
 import TicTacToeShot1 from '../assets/tictactoe-screenshot.png'
 import TicTacToeShot2 from '../assets/tictactoe-screenshot-1.png'
 import TicTacToeShot3 from '../assets/tictactoe-screenshot-2.png'
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import MobClockShot1 from '../assets/mobclock-screenshot.png'
+import MobClockShot2 from '../assets/mobclock-screenshot-1.png'
+import MobClockShot3 from '../assets/mobclock-screenshot-2.png'
 import './Projects.css'
 
 function Projects() {
     const projects = [{
         name: 'Saraf',
-        description: "Saraf is a money exchange and money transfer management system built with VueJS, ExpressJS + NodeJS and PostgreSQL. Some of the main features of the application are user management, accounts management, journal, deposite box, printable receipts, bookmarking, profit/loss report, telegram bot integration, telegram notifications, dark mode, quick search, filtering and lots more...",
+        description: "Saraf is a money exchange and money transfer management system built with Vue, Express and PostgreSQL. Some features of the application includes user management, accounts management, journal, deposite box, printable receipts, bookmarking, profit/loss report, telegram bot integration, telegram notifications, dark mode, quick search, filtering and lots more...",
         pageLink: 'saraf-app.netlify.app',
         techStack: ['VueJS', 'Express', 'NodeJS', 'PrimeVue', 'PostgreSQL', 'Sequelize', 'JWT', 'AWS', 'Docker'],
         images: [SarafShot1, SarafShot2, SarafShot3],
@@ -41,12 +40,19 @@ function Projects() {
         accentColor: "#c5c5e0"
     }, {
         name: 'Tic-Tac-Toe',
-        description: "Saraf is a money exchange and money transfer management system built with VueJS, ExpressJS + NodeJS and PostgreSQL. Some of the main features of the application are user management, accounts management, journal, deposite box, printable receipts, bookmarking, profit/loss report, telegram bot integration, telegram notifications, dark mode, quick search, filtering and lots more...",
-        pageLink: 'saraf-app.netlify.app',
-        techStack: ['VueJS', 'ExpressJS', 'NodeJS', 'PrimeVue', 'PostgreSQL', 'Sequelize', 'JWT', 'AWS', 'Docker'],
+        description: "A cool single/multiplyer tic tac toe game written with vanilla javascript, with multiplayer connection made possible using long polling technique.\nAlso offering spectator mode, nice animations, current records and simple json file-system based data persistence.",
+        pageLink: 'tic-tac-doe.herokuapp.com',
+        techStack: ['HTML', 'CSS', 'Vanilla Javascript', 'Long Polling', 'NodeJS', 'SVG'],
         images: [TicTacToeShot1, TicTacToeShot2, TicTacToeShot3],
         accentColor: "#e5e5e5"
-    }];
+    }, {
+        name: 'MobClock',
+        description: "A nice looking, funny sounding turn-based alarm clock for mob programming sessions written in plain vanilla javascript.\nIt also sends out a notification to remind who's turn it is, auto shuffles the names and even plays a funny sound on each turn (you gotta try it!).\n\nDon't forget to add your break times too...",
+        pageLink: 'https://sayedmurtaza24.github.io/mobclock/',
+        techStack: ['Vanilla Javascript'],
+        images: [MobClockShot1, MobClockShot2, MobClockShot3],
+        accentColor: "#e0dfc5"
+    },];
     const [bgColor, setBgColor] = useState(projects[0].accentColor);
     return (
         <section className='projects-section' style={{ background: bgColor }}>
@@ -55,7 +61,7 @@ function Projects() {
                 <Swiper modules={[Pagination, Mousewheel]}
                     spaceBetween={150}
                     slidesPerView={1}
-                    pagination
+                    pagination={{ dynamicBullets: true }}
                     onSlideChange={(slide) => setBgColor(projects[slide.activeIndex].accentColor)}
                     mousewheel={{ sensitivity: .1, forceToAxis: true }}>
                     {projects.map(p => <SwiperSlide key={p.name}><ProjectSlide info={p} /></SwiperSlide>)}
