@@ -2,12 +2,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
 }
 
 .btns-wrapper {
@@ -22,51 +21,14 @@
 }
 
 .btn {
-    max-width: 40px;
-    max-height: 40px;
+    width: 23px;
+    height: 23px;
 }
 
 .btn img {
     width: 100%;
     height: 100%;
-    transform: scale(.6);
     cursor: pointer;
-}
-
-.menu-list {
-    background-color: white;
-    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); */
-    padding: 10px 40px;
-    max-width: 1000px;
-    color: rgb(20, 20, 20);
-    max-height: 80%;
-    z-index: 2;
-}
-
-.about-section {
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    line-height: 1.4;
-    text-align: justify;
-}
-.about-section__divided {
-    display: flex;
-    gap: 40px;
-}
-.about-section__photo {
-    min-width: 210px;
-    height: 210px;
-    object-fit: cover;
-    border-radius: 50%;
-    /* margin-top: 8px; */
-}
-.abouts__projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px 0;
 }
 
 @media screen and (min-width: 760px) {
@@ -76,10 +38,7 @@
 
     .linkedin-btn::before {
         content: "@sayed-murtaza";
-    }
-
-    .menu-btn::before {
-        content: "Open Menu";
+        width: 90px;
     }
 
     .btn::before {

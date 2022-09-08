@@ -10,6 +10,9 @@
     flex-direction: column;
     gap: 14px;
 }
+.project__description {
+    line-height: 1.5;
+}
 
 .project__details > h4 {
     transform: translateY(5px);
