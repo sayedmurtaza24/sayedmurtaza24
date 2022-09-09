@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import "./fonts/product-sans-regular.ttf";
-import "./fonts/product-sans-bold.ttf";
 
 import 'swiper/css';
 import 'swiper/css/navigation';

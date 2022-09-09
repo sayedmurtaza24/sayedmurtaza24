@@ -52,8 +52,10 @@ function Projects() {
         techStack: ['Vanilla Javascript'],
         images: [MobClockShot1, MobClockShot2, MobClockShot3],
         accentColor: "#e0dfc5"
-    },];
+    }];
+
     const [bgColor, setBgColor] = useState(projects[0].accentColor);
+    
     return (
         <section className='projects-section' style={{ background: bgColor }}>
             <h1 className='projects-section__title'>Projects</h1>
