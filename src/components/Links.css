@@ -11,7 +11,7 @@
 
 .btns-wrapper {
     position: absolute;
-    bottom: 20%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -38,7 +38,7 @@
 
     .linkedin-btn::before {
         content: "@sayed-murtaza";
-        width: 90px;
+        width: 110px;
     }
 
     .btn::before {

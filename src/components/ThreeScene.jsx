@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useRef } from 'react'
 import { Stage, useAnimations, useGLTF, ContactShadows } from '@react-three/drei'
 import { useThree } from '@react-three/fiber';
+// import { useState } from 'react';
 
 const environment = "city", preset = "rembrandt", intensity = 0.9;
 
@@ -23,6 +24,17 @@ export default function ThreeScene({ modelPath }) {
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   });
+
+  // const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    function onMousePosChange(e) {
+      console.log(`x: ${e.clientX / window.innerWidth}`)
+      console.log(`y: ${e.clientY / window.innerHeight}`)
+      // console.log(e)
+    }
+    window.addEventListener('mousemove', onMousePosChange);
+    return () => window.removeEventListener('mousemove', onMousePosChange);
+  }, [camera]);
 
   useEffect(() => {
     setTimeout(() => { 
@@ -50,5 +62,5 @@ export default function ThreeScene({ modelPath }) {
   )
 }
 
-useGLTF.preload('./developer.glb')
-useGLTF.preload('./developer-mobile.glb')
+useGLTF.preload('./developer.glb');
+useGLTF.preload('./developer-mobile.glb');
