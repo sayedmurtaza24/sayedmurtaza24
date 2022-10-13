@@ -30,22 +30,20 @@ export default function ThreeScene({ modelPath, onLoaded }) {
     return ((1 - t) * oMin + oMax * t);
   }
 
-  // const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   useEffect(() => {
     function onMousePosChange(e) {
       const x = lerp(e.clientX, 0, window.innerWidth, -2, 2);
       const y = lerp(e.clientY, 0, window.innerHeight, -2, 2);
       if (window.innerWidth > 760) {
-        const currentX = camera.position.x;
-        const currentY = camera.position.y;
-        const currentZ = camera.position.z;
-        const desiredX = 44 - x;
-        const desiredY = 15 - y;
-        const desiredZ = -40 - x;
+        const
+          cX = camera.position.x,
+          cY = camera.position.y,
+          cZ = camera.position.z,
+          dX = 44 - x, dY = 15 - y, dZ = -40 - x;
         camera.position.set(
-          currentX + ((desiredX - currentX) * 0.15),
-          currentY + ((desiredY - currentY) * 0.15),
-          currentZ + ((desiredZ - currentZ) * 0.15)
+          cX + ((dX - cX) * 0.15),
+          cY + ((dY - cY) * 0.15),
+          cZ + ((dZ - cZ) * 0.15),
         )
       }
     }
