@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import Links from '../components/Links'
 import './Landing.css';
 
-function Landing() {
+function Landing({ onLoaded }) {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 760)
 
     useEffect(() => {
@@ -20,11 +20,11 @@ function Landing() {
             {!isMobile ? <Canvas
                 gl={{ preserveDrawingBuffer: true }}
                 camera={{ fov: 50 }}>
-                <ThreeScene modelPath="./developer.glb" />
+                <ThreeScene onLoaded={onLoaded} modelPath="./developer.glb" />
             </Canvas> : <Canvas
                 gl={{ preserveDrawingBuffer: true }}
                 camera={{ fov: 50 }}>
-                <ThreeScene modelPath="./developer-mobile.glb" />
+                <ThreeScene onLoaded={onLoaded} modelPath="./developer-mobile.glb" />
             </Canvas>}
             <Links />
         </div>

@@ -1,15 +1,15 @@
 import React, { Suspense, useEffect, useRef } from 'react'
-import { Stage, useAnimations, useGLTF, ContactShadows } from '@react-three/drei'
+import { Stage, useAnimations, useGLTF, ContactShadows, useProgress } from '@react-three/drei'
 import { useThree } from '@react-three/fiber';
-// import { useState } from 'react';
 
 const environment = "city", preset = "rembrandt", intensity = 0.9;
 
-export default function ThreeScene({ modelPath }) {
+export default function ThreeScene({ modelPath, onLoaded }) {
   const group = useRef()
   const { scene, animations } = useGLTF(modelPath)
   const { actions } = useAnimations(animations, group)
   const { camera } = useThree()
+  const { progress } = useProgress()
 
   useEffect(() => {
     camera.lookAt(-4, 2, 0)
@@ -25,22 +25,40 @@ export default function ThreeScene({ modelPath }) {
     return () => window.removeEventListener('resize', onResize);
   });
 
+  const lerp = (v, iMin, iMax, oMin, oMax) => {
+    const t = (v - iMin) / (iMax - iMin);
+    return ((1 - t) * oMin + oMax * t);
+  }
+
   // const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   useEffect(() => {
     function onMousePosChange(e) {
-      console.log(`x: ${e.clientX / window.innerWidth}`)
-      console.log(`y: ${e.clientY / window.innerHeight}`)
-      // console.log(e)
+      const x = lerp(e.clientX, 0, window.innerWidth, -2, 2);
+      const y = lerp(e.clientY, 0, window.innerHeight, -2, 2);
+      if (window.innerWidth > 760) {
+        const currentX = camera.position.x;
+        const currentY = camera.position.y;
+        const currentZ = camera.position.z;
+        const desiredX = 44 - x;
+        const desiredY = 15 - y;
+        const desiredZ = -40 - x;
+        camera.position.set(
+          currentX + ((desiredX - currentX) * 0.15),
+          currentY + ((desiredY - currentY) * 0.15),
+          currentZ + ((desiredZ - currentZ) * 0.15)
+        )
+      }
     }
     window.addEventListener('mousemove', onMousePosChange);
     return () => window.removeEventListener('mousemove', onMousePosChange);
   }, [camera]);
 
   useEffect(() => {
-    setTimeout(() => { 
-      actions?.typing?.play()
-    }, 1000);
-  }, [actions]);
+    if (progress === 100) {
+      onLoaded(progress);
+      actions?.typing?.play();
+    }
+  }, [progress, actions, onLoaded]);
 
   return (
     <>
@@ -61,6 +79,3 @@ export default function ThreeScene({ modelPath }) {
     </>
   )
 }
-
-useGLTF.preload('./developer.glb');
-useGLTF.preload('./developer-mobile.glb');

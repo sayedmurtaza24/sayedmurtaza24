@@ -16,7 +16,7 @@ function About() {
                     <p>I started writing code more than 10 years ago, starting my journey with Visual Basic, I quickly moved on
                         to C# since I found it more powerful and explored my way through Unity, XAML, SQL Databases and .Net based
                         Windows Applications. Also along the journey I learned a great deal about photo and video editing and 3D modelling.
-                        With web apps growing I found myself in the Javascript world and learned HTML, CSS, Javascript with some
+                    </p><p>With web apps growing I found myself in the Javascript world and learned HTML, CSS, Javascript with some
                         popular frameworks such as React, Vue, Express and more...</p><p>In 2021 I moved to Sweden as a consequence of war in my country and joined salt, where I've learned more technologies,
                             agile methods, team work, mob programming and lots more...</p>
                     <p>In my free time I enjoy playing competitive video games or board games, play indoor football, swim or maybe finish a season in netflix in one day!
