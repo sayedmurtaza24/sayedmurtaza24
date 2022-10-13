@@ -1,3 +1,3 @@
 # Personal Portfolio
 
-[![Actions Status](https://github.com/{user}/{repo}/workflows/{action}/badge.svg)](https://github.com/{user}/{repo}/actions)
+[![Actions Status](https://github.com/sayedmurtaza24/personal-portfolio/workflows/Build React app and deploy to github pages/badge.svg)](https://github.com/sayedmurtaza24/personal-portfolio/actions)
