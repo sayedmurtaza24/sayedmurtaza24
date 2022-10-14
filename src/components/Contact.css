@@ -1,5 +1,5 @@
 .contact-section {
-    min-height: 100vh;
+    height: 100vh;
     padding: 0 250px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -21,7 +21,7 @@
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     padding: 20px 30px;
-    width: 300px;
+    width: 350px;
 }
 
 .form-part {
@@ -39,7 +39,6 @@
 .form-input {
     resize: none;
     padding: 10px 20px;
-    max-width: 260px;
     border: none;
     outline: none;
     transition: box-shadow 0.3s ease-in-out;
@@ -81,4 +80,31 @@
 
 .sent-success {
     font-size: 14px;
+}
+
+@media screen and (max-width: 760px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        gap: 20px;
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    .contact-section__form {
+        width: 100%;
+        padding: 50px 20px;
+    }
+    .contact-section__text {
+        width: 100%;
+        font-size: 40px;
+        padding: 30px;
+    }
+    .form-input {
+        width: 100%;
+    }
+    .form-control {
+        flex-direction: column;
+        align-items: center;
+    }
 }
