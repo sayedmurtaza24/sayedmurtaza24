@@ -1,0 +1,71 @@
+.contact-section {
+    min-height: 100vh;
+    padding: 0 250px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    background-color: #418ac6;
+}
+
+.contact-section__text {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.contact-section__form {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    width: 300px;
+}
+
+.form-part {
+    display: flex;
+    flex-direction: column;
+    padding: 6px 0;
+}
+
+.form-header {
+    padding-bottom: 10px;
+    font-size: 38px;
+    color: #3877ab;
+}
+
+.form-input {
+    resize: none;
+    padding: 10px 20px;
+    max-width: 260px;
+    border: none;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.form-input:focus {
+    box-shadow: 0 10px 15px rgba(65, 138, 198, 0.2);
+}
+
+.form-label {
+    color: rgb(100, 100, 100);
+    font-size: 13px;
+}
+
+.form-button {
+    margin-top: 20px;
+    padding: 8px 25px;
+    border: none;
+    background-color: #418ac6;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+.form-button:hover {
+    background-color: #4e98d4;
+}
+
+.form-button:active {
+    background-color: #366f9e;
+}

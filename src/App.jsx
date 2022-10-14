@@ -3,6 +3,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Landing from './components/Landing';
 import "./App.css";
+import Contact from './components/Contact';
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -19,6 +20,7 @@ function App() {
         <Landing onLoaded={setProgress} />
         <About />
         <Projects />
+        <Contact />
       </div>
     </>
   )
