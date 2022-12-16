@@ -15,9 +15,9 @@ import FancychatShot2 from './assets/fancychat-screenshot-1.png'
 import FancychatShot3 from './assets/fancychat-screenshot-2.png'
 
 export const projects = [{
-    name: 'Saraf',
-    description: "Saraf is a money exchange and money transfer management system built with Vue, Express and PostgreSQL. Some features of the application includes user management, accounts management, journal, deposite box, printable receipts, bookmarking, profit/loss report, telegram bot integration, telegram notifications, dark mode, quick search, filtering and lots more...",
-    pageLink: 'https://saraf-app.netlify.app',
+    name: 'Saraaf',
+    description: "Saraaf is a money exchange and money transfer management system built with Vue, Express and PostgreSQL. Some features of the application includes user management, accounts management, journal, deposite box, printable receipts, bookmarking, profit/loss report, telegram bot integration, telegram notifications, dark mode, quick search, filtering and lots more...",
+    pageLink: 'https://test.saraaf.net/',
     gitLink: 'https://github.com/sayedmurtaza24',
     techStack: ['VueJS', 'Express', 'NodeJS', 'PrimeVue', 'PostgreSQL', 'Sequelize', 'JWT', 'AWS', 'Docker'],
     images: [SarafShot1, SarafShot2, SarafShot3],
