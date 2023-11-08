@@ -17,7 +17,7 @@ export default function ThreeScene({ modelPath, onLoaded }) {
       if (window.innerWidth < 760) {
         camera.position.set(75, 39, -65)
       } else {
-        camera.position.set(44, 15, -40)
+        camera.position.set(44, 20, -40)
       }
     }
     onResize()
@@ -60,10 +60,10 @@ export default function ThreeScene({ modelPath, onLoaded }) {
 
   return (
     <>
-      <ambientLight intensity={.25} />
+      <ambientLight intensity={.5} />
       <Suspense fallback={null}>
         <group ref={group}>
-          <ContactShadows opacity={1} scale={120} blur={2.6} far={10} resolution={1024} frames={1} color="#000000" />
+          <ContactShadows opacity={1} scale={120} blur={5} far={10} resolution={1024} frames={1} color="#000000" />
           <Stage
             preset={preset}
             intensity={intensity}
