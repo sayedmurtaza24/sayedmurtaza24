@@ -1,8 +1,8 @@
 import React, { Suspense, useEffect, useRef } from 'react'
-import { Stage, useAnimations, useGLTF, ContactShadows, useProgress } from '@react-three/drei'
+import { Stage, useAnimations, useGLTF,  useProgress } from '@react-three/drei'
 import { useThree } from '@react-three/fiber';
 
-const environment = "city", preset = "rembrandt", intensity = 0.9;
+const environment = "city", preset = "rembrandt", intensity = 2.0;
 
 export default function ThreeScene({ modelPath, onLoaded }) {
   const group = useRef()
@@ -36,14 +36,14 @@ export default function ThreeScene({ modelPath, onLoaded }) {
       const y = lerp(e.clientY, 0, window.innerHeight, -2, 2);
       if (window.innerWidth > 760) {
         const
-          cX = camera.position.x,
-          cY = camera.position.y,
-          cZ = camera.position.z,
-          dX = 44 - x, dY = 15 - y, dZ = -40 - x;
+        cX = camera.position.x,
+        cY = camera.position.y,
+        cZ = camera.position.z,
+        dX = 44 - x, dY = 15 - y, dZ = -40 - x;
         camera.position.set(
-          cX + ((dX - cX) * 0.15),
-          cY + ((dY - cY) * 0.15),
-          cZ + ((dZ - cZ) * 0.15),
+          cX + ((dX - cX) * 0.1),
+          cY + ((dY - cY) * 0.1),
+          cZ + ((dZ - cZ) * 0.1),
         )
       }
     }
@@ -60,14 +60,13 @@ export default function ThreeScene({ modelPath, onLoaded }) {
 
   return (
     <>
-      <ambientLight intensity={.5} />
+      <ambientLight intensity={.7} />
       <Suspense fallback={null}>
         <group ref={group}>
-          <ContactShadows opacity={1} scale={120} blur={5} far={10} resolution={1024} frames={1} color="#000000" />
           <Stage
             preset={preset}
             intensity={intensity}
-            contactShadow={false}
+            shadows={{ type: 'contact', color: 'black', opacity: 0.5 }}
             adjustCamera={false}
             environment={environment}>
             <primitive object={scene} />
